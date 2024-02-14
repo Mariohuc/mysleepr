@@ -9,7 +9,7 @@ export class ReservationsRepository extends AbstractRepository<ReservationDocume
   protected readonly logger: Logger = new Logger(ReservationsRepository.name);
 
   constructor(
-    @InjectModel(ReservationDocument.name)
+    @InjectModel(ReservationDocument.name) // We're passing a injection token as an argument in @InjectModel
     reservationModel: Model<ReservationDocument>,
   ) {
     super(reservationModel);

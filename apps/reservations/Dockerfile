@@ -4,14 +4,17 @@ FROM node:18-alpine AS development
 WORKDIR /usr/src/app
 
 COPY package.json pnpm-lock.yaml ./
+COPY tsconfig.json ./
+COPY nest-cli.json ./
 
 RUN npm i -g pnpm
 
 RUN pnpm install
 
-COPY . .
+COPY apps/reservations apps/reservations
+COPY libs libs
 
-RUN pnpm run build
+RUN pnpm run build reservations
 
 # stage production
 FROM node:18-alpine AS production

@@ -1,6 +1,6 @@
 steps:
   # reservations
-  - name: 'gcr.io/cloud-builders/docker',
+  - name: 'gcr.io/cloud-builders/docker'
     args:
       [
         'build',
@@ -16,7 +16,7 @@ steps:
         'push', 'southamerica-east1-docker.pkg.dev/mysleepr-413821/reservations/production',
       ]
   # auth
-  - name: 'gcr.io/cloud-builders/docker',
+  - name: 'gcr.io/cloud-builders/docker'
     args:
       [
         'build',
@@ -32,7 +32,7 @@ steps:
         'push', 'southamerica-east1-docker.pkg.dev/mysleepr-413821/auth/production',
       ]
   # notifications
-  - name: 'gcr.io/cloud-builders/docker',
+  - name: 'gcr.io/cloud-builders/docker'
     args:
       [
         'build',
@@ -48,7 +48,7 @@ steps:
         'push', 'southamerica-east1-docker.pkg.dev/mysleepr-413821/notifications/production',
       ]
   # payments
-  - name: 'gcr.io/cloud-builders/docker',
+  - name: 'gcr.io/cloud-builders/docker'
     args:
       [
         'build',

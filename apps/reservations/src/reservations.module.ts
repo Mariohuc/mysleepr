@@ -3,7 +3,13 @@ import { ReservationsService } from './reservations.service';
 import { ReservationsController } from './reservations.controller';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { AUTH_SERVICE, DatabaseModule, LoggerModule, PAYMENTS_SERVICE } from '@app/common';
+import {
+  AUTH_SERVICE,
+  DatabaseModule,
+  HealthModule,
+  LoggerModule,
+  PAYMENTS_SERVICE,
+} from '@app/common';
 import { ReservationsRepository } from './reservations.repository';
 import * as Joi from 'joi';
 import {
@@ -57,6 +63,7 @@ import {
         inject: [ConfigService],
       },
     ]),
+    HealthModule,
   ],
   controllers: [ReservationsController],
   // All the module's injectable classes go in the providers array
